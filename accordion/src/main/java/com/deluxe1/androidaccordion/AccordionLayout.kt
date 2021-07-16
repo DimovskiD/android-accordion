@@ -5,7 +5,6 @@ import android.os.Build
 import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.annotation.RequiresApi
 
 /**Vertical accordion layout
@@ -50,7 +49,7 @@ class AccordionLayout: LinearLayout, OnExpandableViewClickListener {
     }
 
     /**Handles click on ExpandableView. It expands or collapses the clicked view according to its state
-     * And collapses all other views
+     * and collapses all other views
      * @param expandableView - ExpandableView that was clicked*/
     override fun onExpandableViewClicked(expandableView: ExpandableView) {
         viewList.forEach { if (it != expandableView && it.isExpanded()) it.collapse() }
