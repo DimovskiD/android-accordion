@@ -14,10 +14,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<AccordionLayout>(R.id.accordion).addCustomViews(
             arrayListOf(
-                TitleAccordionElement(this, "Test title 1", "realllllllllllllllllllllllllllyyyyyyyyyyyyyyyyyyyyyyyyyy long description"),
-                DescriptionAccordionElement(this, "Test title", "Test description1111", "lorem imfsdjfdskflsdjfkl sdjfklsdfjsdkfjsdk jsdfklsdjfkl jfklsdjfklsdjf dslkfjsd ldfl;"),
-                AccordionElementBuilder(this).setTitle("Test Builder").setSubtitle("Builder subtitle").setImageRes(android.R.drawable.ic_input_add).setClickableViewColor(getColor(android.R.color.holo_blue_dark)).setLongDescription("jdsfgkldfglkdfgfklgkldfl").setExpandableViewColor(getColor(R.color.design_default_color_primary_dark)).build(),
-                ImageAccordionElement(this, "Test image", "Image desc", "Long desc sdkdflsfjdsklfkl lksdflksd", imgRes = android.R.drawable.btn_star)
-            ))
+                TitleAccordionElement(this, getString(R.string.test_title), getString(R.string.lorem_ipsum)),
+                DescriptionAccordionElement(
+                    this,
+                    getString(R.string.test_title),
+                    getString(R.string.test_description),
+                    getString(R.string.lorem_ipsum)
+                ),
+                AccordionElementBuilder(this).setTitle(getString(R.string.test_builder))
+                    .setSubtitle(getString(R.string.builder_subtitle)).setImageRes(android.R.drawable.ic_input_add)
+                    .setClickableViewColor(getColor(android.R.color.holo_blue_dark))
+                    .setLongDescription(getString(R.string.lorem_ipsum))
+                    .setExpandableViewColor(getColor(R.color.design_default_color_secondary))
+                    .build(),
+                ImageAccordionElement(
+                    this,
+                    getString(R.string.test_image),
+                    getString(R.string.image_desc),
+                    getString(R.string.lorem_ipsum),
+                    imgRes = android.R.drawable.btn_star
+                )
+            )
+        )
     }
 }
